@@ -14,7 +14,7 @@ char traccia18(char *a,int n)
 {
     int i,j,s=0,m=0;
     char c_aux,c_max;
-    for(i=0;a[i];i++)
+    for(i=0;i<n;i++)
     {
         c_aux=a[i];
 
