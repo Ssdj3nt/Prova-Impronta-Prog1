@@ -2,32 +2,31 @@
 size, determina e restituisce come parametro di output il carattere più frequente.*/
 #include <stdio.h>
 #include <string.h>
-char traccia18(char *,int,int *);
+char traccia18(char *,int);
 void main()
 {
-    char a[100]={"ccc aa d zzzzz eee"};
-    int occorrenze[21]={0};
-    size_t n_a = sizeof (a) / sizeof (a[0]);
-    traccia18(a,n_a,occorrenze);
-    char x=traccia18(a,n_a,occorrenze);
+    char a[100]={"c aaa e  bbbb zzzzzzzz ddddddddddddddd kkkkkkkkk uuuuu"};
+    size_t n = sizeof (a) / sizeof (a[0]);
+    char x=traccia18(a,n);
     printf("%c",x);
-
 }
-char traccia18(char *a,int n_a, int *occorrenze)
+char traccia18(char *a,int n)
 {
-    char alfabeto[]={'a','b','c','d','e','f','g','h','i','l','m','n','o','p','q','r','s','t','u','v','z'};
-    int i,j,max=0,i_max=0;
-    strlwr(a);
-    for(i=0; a[i]!=NULL; i++){
-        for (j=0; j<n_a; j++){
-            if(a[i]==alfabeto[j])
-                occorrenze[j]++;}
-    }
-    for(i=0;i<21;i++)
+    int i,j,s=0,m=0;
+    char c_aux,c_max;
+    for(i=0;i<a[i];i++)
     {
-        if(occorrenze[i]>max){
-            max=occorrenze[i];
-            i_max=i;}
+        c_aux=a[i];
+
+        for(j=0;j<a[j];j++)
+            if(c_aux==a[j])
+                s++;
+        if(s>m)
+        {
+            m=s;
+            c_max=c_aux;
+        }
+        s=0;
     }
-    return alfabeto[i_max];
+    return c_max;
 }
