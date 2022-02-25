@@ -14,11 +14,11 @@ char traccia18(char *a,int n)
 {
     int i,j,s=0,m=0;
     char c_aux,c_max;
-    for(i=0;i<a[i];i++)
+    for(i=0;a[i];i++)
     {
         c_aux=a[i];
 
-        for(j=0;j<a[j];j++)
+        for(j=0;a[j];j++)
             if(c_aux==a[j])
                 s++;
         if(s>m)
