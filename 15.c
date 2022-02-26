@@ -18,7 +18,7 @@ void traccia15(char *a,int n_a, int *occorrenze)
     char alfabeto[]={'a','b','c','d','e','f','g','h','i','l','m','n','o','p','q','r','s','t','u','v','z'};
     int i,j;
     strlwr(a);
-    for(i=0; a[i]!=NULL; i++){
+    for(i=0;i<n_a; i++){
         for (j=0; j<n_a; j++){
             if(a[i]==alfabeto[j])
                 occorrenze[j]++;}
