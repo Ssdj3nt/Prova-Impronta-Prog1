@@ -3,7 +3,6 @@ struct prodotto {char *nome; int codice; double prezzo;};
 restituisce in output 1 se i due array di struct sono uguali, 0 se non lo sono. Si noti
 che due dati struct sono uguali se sono uguali tutti i loro campi.*/
 #include <stdio.h>
-#include <string.h>
 struct prodotto
 {
     char *nome;
