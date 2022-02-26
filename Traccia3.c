@@ -10,7 +10,7 @@ struct punto
     double y;
 };
 typedef struct punto Punto;
-void traccia3(Punto *,int n);
+double traccia3(Punto *,int n);
 double distanza(const Punto *, const Punto *);
 void main()
 {
@@ -21,24 +21,17 @@ void main()
     int n=4;
     traccia3(a,n);
 }
-void traccia3(Punto a[],int n)
+double traccia3(Punto a[],int n)
 {
     int i,j;
-    int i1,i2;
-    double dist1,dist2;
-    dist1 = distanza(&a[0],&a[1]);
+    double dist = distanza(&a[0],&a[1]);
     for(i=0;i<n-1;i++){
-        for(j=i+1;j<n;j++){
-            dist2 = distanza(&a[i],&a[j]);
-            if(dist2>dist1)
+        for(j=i+1;j<n;j++)
+            if(distanza(&a[i],&a[j])>dist)
             {
-                dist1=dist2;
-                i1=i;
-                i2=j;
+                dist=distanza(&a[i],&a[j]);
             }
-        }
-    }
-    printf("%lf----%d,%d",dist1,i1,i2);
+        return dist;
 }
 double distanza(const Punto *p1, const Punto *p2)
 {
