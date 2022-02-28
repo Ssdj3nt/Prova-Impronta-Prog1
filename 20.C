@@ -51,13 +51,10 @@ void traccia20(p Partecipante[],int n)
     while (fine_ord!=0)
     {
         ult_scambio=0;
-        for (i=0; i<fine_ord; i++)
-        {
-            if (strcmp(Partecipante[i].utente.cognome, Partecipante[i+1].utente.cognome) > 0)
-            {
+        for (i=0; i<fine_ord; i++){
+            if (strcmp(Partecipante[i].utente.cognome, Partecipante[i+1].utente.cognome) > 0){
                 Scambio(&Partecipante[i], &Partecipante[i+1]);
-                ult_scambio=i;
-            }
+                ult_scambio=i;}
         }
         fine_ord=ult_scambio;
     }
