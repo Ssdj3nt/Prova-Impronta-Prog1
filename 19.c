@@ -13,19 +13,19 @@ void main()
 }
 char traccia19(char *a,int n)
 {
-    int i,j,min,freq[n];
-    char minChar = a[0];
+    int i,j,min,occ[n];
+    char min_c=a[0];
+    for(i=0;i<n;i++){
+        occ[i]=0;
+        for(j=0;j<n;j++)
+            if(a[i]==a[j])
+                occ[j]++;}
 
-    for(i = 0; i < n; i++) {
-        freq[i] = 1;
-        for(j = i+1; j < n; j++) {
-            if(a[i] == a[j] && a[i] != ' ' && a[i] != '0') {
-                freq[i]++;}}}
-
-    min = freq[0];
-    for(i = 0; i < n; i++) {
-        if(min > freq[i] && freq[i] != '0') {
-            min = freq[i];
-            minChar = a[i];}}
-    return minChar;
+    min=occ[0];
+    for(i=0;i<n;i++)
+        if(min > occ[i]){
+            min=occ[i];
+            min_c=a[i];
+        }
+    return min_c;
 }
