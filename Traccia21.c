@@ -8,7 +8,6 @@ codice di tentativo e ha al massimo 3 tentativi per indovinarlo.
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
-void traccia21();
 int main()
 {
     srand(time(NULL));
