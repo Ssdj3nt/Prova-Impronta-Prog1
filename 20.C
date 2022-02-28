@@ -45,8 +45,7 @@ void traccia20(p Partecipante[],int n)
 {
     int i;
     int ult_scambio;
-    int fine_ord;
-    fine_ord=n-1;
+    int fine_ord=n-1;
 
     while (fine_ord!=0)
     {
