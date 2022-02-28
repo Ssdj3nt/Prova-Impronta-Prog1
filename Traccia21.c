@@ -5,29 +5,29 @@ e deve essere costruito in modo casuale. Nella seconda fase l’utente inserisce
 codice di tentativo e ha al massimo 3 tentativi per indovinarlo.
 */
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include <time.h>
-int main()
+void main()
 {
-    srand(time(NULL));
-    int i,Tentativi;
-    char Pin[5];
-    char PinSegreto[5]={48+rand()%10,48+rand()%10,48+rand()%10 ,48+rand()%10 ,48+rand()%10};
+    srand((unsigned int)time(0));
+    int i,tentativi=0,v=0,pin[5],pins[5];
+
     printf("Pin segreto:");
-
     for(i=0;i<5;i++){
-        printf("%c", PinSegreto[i]);}
+        pins[i]=rand()%10;
+        printf("%d", pins[i]);}
 
-    Tentativi=0;
     do{
-        printf("\nInserisci Pin tentativo %d ", Tentativi+1);
-        gets(Pin);
-        printf("La lunghezza del pin e'%d\n", strlen(Pin));
-        if(strncmp(Pin , PinSegreto, 5) ==0){
-            printf("Corretto\n");
-            Tentativi=4;}
-        Tentativi++;}
-    while(Tentativi<3);
-    return 0;
+        printf("\n\nInserisci il pin.\n%d° tentativo:\n",tentativi+1);
+        for(i=0;i<5;i++){
+            scanf("\n%d",&pin[i]);
+            if(pin[i]==pins[i])
+                v++;}
+
+        if(v==5){
+            printf("Pin corretto.");
+            tentativi=3;}
+        else
+            tentativi++;
+    }while(tentativi<3);
 }
