@@ -23,7 +23,7 @@ char traccia19(char *a,int n)
 
     min=occ[0];
     for(i=0;i<n;i++)
-        if(min > occ[i]){
+        if(occ[i]<min){
             min=occ[i];
             min_c=a[i];
         }
